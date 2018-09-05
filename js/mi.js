@@ -102,8 +102,8 @@
             t = setInterval(move, delay);
         };
     }
-
-    function goods4(cons, bannerBar, widthOne, rightBthOne, leftBthOne, activeClass, flag = true) {
+    //内容轮播函数
+    function goods4(cons, bannerBar, widthOne, rightBthOne, leftBthOne, activeClass,flag=true) {
         let next = 0;
         let current = 0;
         cons[current].style.left = 0 + "px";
@@ -111,13 +111,13 @@
 
         function move() {
             next++;
-            if (next == bannerBar.length) {
-                next = 0;
+            if (next == 3) {
+                next = 2;
             }
             cons[next].style.left = `${widthOne}px`;
             animate(cons[current], {left: -widthOne});
-            animate(cons[next], {left: 0}, function () {
-                flag = true;
+            animate(cons[next], {left: 0},function(){
+                flag=true;
             });
             bannerBar[current].classList.remove(activeClass);
             bannerBar[next].classList.add(activeClass);
@@ -127,41 +127,42 @@
         function moveL() {
             next--;
             if (next == -1) {
-                next = bannerBar.length - 1;
+                next = 0;
             }
             cons[next].style.left = `${-widthOne}px`;
             animate(cons[current], {left: widthOne});
-            animate(cons[next], {left: 0}, function () {
-                flag = true;
+            animate(cons[next], {left: 0},function(){
+                flag=true;
             });
             bannerBar[current].classList.remove(activeClass);
             bannerBar[next].classList.add(activeClass);
             current = next;
         }
-
+        //内容左键
         leftBthOne.onclick = function () {
+            if(next==0){
+                return;
+            }
             if (!flag) {
                 return;
             }
             flag = false;
             moveL();
         };
-
-
+        //内容右键
         rightBthOne.onclick = function () {
+            if(next==cons.length-1){
+                return;
+            }
             if (!flag) {
                 return;
             }
             flag = false;
             move();
         };
-        for (let i = 0; i < bannerBar.length; i++) {
-
+        // 内容轮波点
+        for (let i = 0; i < bannerBar.length; i++){
             bannerBar[i].onclick = function () {
-                if (flag == false) {
-                    return;
-                }
-                flag = false;
                 bannerBars();
 
             };
@@ -170,26 +171,25 @@
                 if (i == current) {
                     return;
                 } else if (i < current) {
-                    cons[i].style.left = `${-widths}px`;
-                    animate(cons[current], {left: widths});
-                    animate(cons[i], {left: 0}, function () {
-                        flag = true;
-                    });
+                    cons[i].style.left = `${-widthOne}px`;
+                    animate(cons[current], {left: widthOne});
+                    animate(cons[i], {left: 0});
                     bannerBar[current].classList.remove(activeClass);
                     bannerBar[i].classList.add(activeClass);
                 } else if (i > current) {
-                    cons[i].style.left = `${widths}px`;
-                    animate(cons[current], {left: -widths});
-                    animate(cons[i], {left: 0}, function () {
-                        flag = true;
-                    });
+                    cons[i].style.left = `${widthOne}px`;
+                    animate(cons[current], {left: -widthOne});
+                    animate(cons[i], {left: 0});
                     bannerBar[current].classList.remove(activeClass);
                     bannerBar[i].classList.add(activeClass);
                 }
-                next = current = i;
+                current =next= i;
+                console.log(i);
             }
         }
     }
+
+//    为你推荐 轮播
 window.onload=function() {
     let bthL=document.querySelectorAll(".right .leftbth");
     let bthR=document.querySelectorAll(".right .rightbth");
@@ -240,4 +240,25 @@ window.onload=function() {
                 aside[index].style.display="none";
             }
         })
+
+//    家电选项卡
+    let rightUlOnes=document.querySelectorAll(".goods1 .content .rightUl .rightUlOne");
+    let hots=document.querySelectorAll(".goods1 .top .right a");
+    console.log(rightUlOnes,hots);
+
+    rightUlOnes[0].style.display="block";
+    hots.forEach(function(value,index){
+        value.onmouseenter=function(){
+                rightUlOnes.forEach(function(v){
+                    v.style.display="none";
+                });
+            rightUlOnes[index].style.display="block";
+                hots.forEach(function(v){
+                    v.classList.remove("active");
+                });
+            value.className="active";
+            console.log(index);
+        }
+    })
+
 };

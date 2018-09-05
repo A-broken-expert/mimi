@@ -130,7 +130,6 @@
 .dh .top span{
 	color: #424242;	
 }
-
 .dh .top .right{
 	height: 40px;
 	float: right;
@@ -171,7 +170,7 @@
 .dh .top .right .img .cart{
 /* 	width: 120px; */
 	width: 360px;
-	height: 0px;
+	height: 0;
 	position: absolute;
 	top: 40px;
 	right: 0;
@@ -185,10 +184,12 @@
 	transform-origin: 100% 100% 0; */
 	height: 100px;
 	transition: all .5s;
-	box-shadow:  1px 0px 10px 0px rgba(0, 0, 0, 0.3);
+	box-shadow:  1px 0 10px 0 rgba(0, 0, 0, 0.3);
 	z-index: 10;
 	background-color: #FFf;
 }
+
+/*头部*/
 .head{
 	width: 100%;
 	height: 100px;
@@ -202,14 +203,14 @@
 .head .contain .icon{
 	width: 55px;
 	height: 55px;
-	margin-top: 22.5px;
+	margin-top: 23px;
 	float: left;
 }
 .head .contain .fs{
 	width: 165px;
-	height: 100px;
+	height: 77px;
 	float: left;
-	margin-top: 22.5px;
+	margin-top: 23px;
 }
 .head .contain ul{
 	width: 700px;
@@ -236,8 +237,6 @@
 /* 	border: 1px; */
 	line-height: 95px;
 	position: relative;
-	float: right;
-
 }
 .head .contain .right input{
 	display: block;
@@ -273,6 +272,23 @@
 	border-color: #ff6700;
 	background-image: url('../img/xiaomi/sousuo2.png');
 }
+.head .container{
+	width: 100%;
+	height: 230px;
+	background:#fff;
+}
+.head ul li .container ul{
+	width: 1226px;
+	height: 201px;
+}
+.head .container ul li.nav{
+	width: 204px;
+	height: 201px;
+	padding:35px 12px 0;
+}
+
+
+/*banner*/
 .banner{
 	width: 1226px;
 	height: 460px;
@@ -291,6 +307,9 @@
 	left: 1226px;
 	top:23px;
 }
+
+
+/*侧边栏*/
 .banner .aside{
 	width: 234px;
 	height: 460px;
@@ -309,6 +328,9 @@
 	padding-left:30px;
 	font-size: 14px;
 }
+
+
+/*选项卡*/
 .banner .aside li .card{
 	width: 992px;
 	height: 460px;
@@ -317,15 +339,19 @@
 	top: 0;
 	z-index: 1;
 	display: none;
-	background:#fff;
 	text-align: center;
 	color:#000;
+
+}
+.banner .aside ul li .card .card_one{
+	width:auto;
+	height: 460px;
 }
 .banner .aside ul li .card .ul{
 	height: 460px;
 	width: 265px;
-	overflow: hidden;
 	float: left;
+	background:#fff;
 }
 .banner .aside ul li .card .ul .li{
 	width: 265px;
@@ -351,16 +377,23 @@
 	color:#ff6700;
 	text-decoration: none;
 }
+
+
 .banner span{
 	margin-right: 20px;
 	float: right;
 }
+
+
 .banner .aside a{
 	color: #fff;
 }
 .banner .aside li:hover{
 	background-color: #ff6700;
 }
+
+
+/*箭头*/
 .banner .leftbth{
 	width: 41px;
 	height: 69px;
@@ -376,7 +409,7 @@
 	z-index: 1;
 }
 .banner .leftbth:hover{
-	background-position: 0px 0;
+	background-position: 0 0;
 }
 .banner .rightbth{
 	width: 41px;
@@ -402,6 +435,9 @@
 .banner:hover .leftbth{
 	display: block;
 }
+
+
+/*轮播点*/
 .banner .bannerbar{
 	width: 200px;
 	height: 18px;
@@ -427,6 +463,8 @@
 	background-color: #f5f5f5;
 	border: 2px solid rgba(0, 0, 0, 0.5);
 }
+
+/*home*/
 .home{
 	width: 1226px;
 	height: 170px;	
@@ -522,6 +560,8 @@
 .home .cannel1 li:hover a{
 	color: rgba(255, 255, 255, 1);
 }
+
+/*小米闪购*/
 .top1{
 	width: 1226px;
 	height: 58px;
@@ -620,14 +660,12 @@
 	line-height: 46px;
 	float:left;
 }
-/* .bottom{
-	width: 100%;
-	height: 120px;
-} */
 .bottom img{
 	width: 1226px;
 	height: 120px;
 }
+
+/*手机*/
 .goods{
 	width: 100%;
 	height: auto;
@@ -664,10 +702,9 @@
 	border-radius: 50%;
 	background-color: #b0b0b0;
 	float: right;
-	margin: 18px 0px 0  0;
+	margin: 18px 0 0  5px;
 	text-align: center;
 	line-height: 18px;
-	margin-left: 5px;
 	color: #fff;
 }
 .goods .top .right a:hover{
@@ -714,7 +751,6 @@
 	width: 160px;
 	height: 160px;
 }
-
 .goods ul li:nth-child(1){
 	width: 234px;
 	height: 614px;
@@ -773,7 +809,7 @@
 }
 
 
-/* 这是goods1 */
+/* 这是家电 */
 .goods1{
 	width: 100%;
 	height: auto;
@@ -796,7 +832,6 @@
 }
 .goods1 .top .right a:hover{
 	color: #ff6700;
-
 }
 .goods1 .top .right a{
 	color: #424242;	
@@ -805,69 +840,102 @@
 	float: left;
 }
 .goods1 .top .right .active{
-	width: 32px;
+	width: auto;
 	height: 45px;
 	border-bottom: 2px solid #ff6700;
 	float: left;
 	margin-left: 10px;
+    color:#ff6700;
 }
-.goods1 ul{
+
+
+.goods1 .content{
 	margin: 0 auto;
 	width: 1226px;
 	height: 614px;
 	color: #333;
 	font-size: 22px;
 }
-.goods1 ul li{
+.goods1 .content .leftUl{
+	width: 234px;
+	height: 614px;
+	float: left;
+	/*margin-right:14px;*/
+}
+.goods1 .content .rightUl{
+	width: 978px;
+	height: 614px;
+	float: right;
+	position: relative;
+}
+.goods1 .content .rightUl .rightUlOne{
+	width: 978px;
+	height: 614px;
+	position: absolute;
+	display:none;
+}
+.goods1 .content .leftUl li{
 	width: 234px;
 	height: 300px;
-	float: left;
-	background-color: #fff;
-	margin: 0px 14px 14px 0;
-	text-align: center;
+	margin-bottom: 14px;
 	transition: all 0.5s;
-	position: relative;
-	overflow: hidden;
 }
-.goods1 ul li:hover{
+.goods1 .content .rightUl li{
+	width: 234px;
+	height: 300px;
+	margin: 0 14px 14px 0;
+	transition: all 0.5s;
+	float: left;
+	text-align: center;
+	overflow: hidden;
+	background: #fff;
+	position: relative;
+}
+.goods1 .content ul li:hover{
 	width: 234px;
 	height: 300px;
 	transform: translateZ(5px);
 	box-shadow: 0 2px 50px -10px #333;
 	float: left;
-	background-color: #fff;
-	margin: 0px 14px 14px 0;
+	margin: 0 14px 14px 0;
 	text-align: center;
-	transition: all 0.5s linner;
+	transition: all 0.5s linear;
 }
-.goods1 ul li img{
+.goods1 .content .rightUl li img{
 	width: 160px;
 	height: 160px;
 }
-.goods1 ul li:nth-child(1) img{
+.goods1 .content .leftUl li img{
 	width: 234px;
 	height: 300px;
 	margin: 0;
 }
-.goods1 ul li:nth-child(6) img{
-	width: 234px;
-	height: 300px;
-	margin: 0;
-}
-.goods1 ul li:nth-child(5){
+.goods1 .content .rightUl li:nth-child(4){
 	margin-right: 0;
 }
-.goods1 ul li:nth-child(10){
+.goods1 .content .rightUl li:nth-child(8){
 	width: 234px;
 	height: 143px;
 	margin-right: 0;
 }
-.goods1 ul li:nth-child(11){
+.goods1 .content .rightUl li:nth-child(8) img{
+	width: 80px;
+	height: 80px;
+}
+.goods1 .content .rightUl li:nth-child(9){
 	margin-right: 0;
 	width: 234px;
 	height: 143px;
 }
-.goods1 ul li .price{
+.goods1 .content .rightUl li .right1{
+	/* 	background-color: green; */
+	width: 40px;
+	height:40px;
+	float: right;
+	margin-right: 40px;
+	margin-top:50px ;
+}
+.goods1 .content .rightUl li .price{
 	height: 20px;
 	text-align: center;
 	width: 64px;
@@ -876,13 +944,13 @@
 	font-size: 12px;
 	margin: 0 auto;
 }
-.goods1 ul li .content{
+.goods1 .content .rightUl li .content{
 	height: 20px;
 	text-align: center;
 	width: 64px;
 	margin: 0 auto;
 }
-.goods1 ul li .new{
+.goods1 .content .rightUl li .new{
 	width: 64px;
 	height: 20px;
 	background-color: #83c44e;
@@ -891,7 +959,7 @@
 	line-height: 20px;
 	color: #fff;
 }
-.goods1 ul li .left{
+.goods1 .content .rightUl li .left{
 	margin-top: 50px;
 /* 	background-color: #000; */
 	width: 94px;
@@ -899,7 +967,7 @@
 	float: left;
 	margin-left: 20px;
 }
-.goods1 ul li .right{
+.goods1 .content .rightUl li .right{
 /* 	background-color: green; */
 	width: 80px;
 	height: 80px;
@@ -907,32 +975,19 @@
 	margin-right: 20px;
 	margin-top:30px ;
 }
-.goods1 ul li .right1{
-/* 	background-color: green; */
-	width: 40px;
-	height:40px;
-	float: right;
-	margin-right: 40px;
-	margin-top:50px ;
-}
-.goods1 ul li .right img{
-/* 	background-color: green; */
-	width: 80px;
-	height: 80px;
-}
-.goods1 ul li .right1 .iconfont{
+.goods1 .content .rightUl li .right1 .iconfont{
 /* 	background-color: green; */
 	font-size: 50px;
 	color: #ff6700;
 }
-.goods1 ul li .one{
+.goods1 .content .rightUl li .one{
 	color:#333;
 	font-size: 14px;
 	font-weight: 400;
 	height: 21px;
 	margin-top: 10px;
 }
-.goods1 ul li  .two{
+.goods1 .content .rightUl li  .two{
 	color:#b0b0b0;
 	font-size: 12px;
 	height: 18px;
@@ -941,52 +996,49 @@
 	text-overflow: ellipsis;
 	white-space: nowrap;
 }
-.goods1 ul li .three{
+.goods1 .content .rightUl li .three{
 	color:#ff6700;
 	font-size: 12px;
 }
-.goods1 ul li .span{
+.goods1 .content .rightUl li .span{
 	color:#000;
 	font-size: 22px;
 }
-.goods1 ul li .three del{
+.goods1 .content .rightUl li .three del{
 	color:#b0b0b0;
 	text-decoration: line-through;
 }
-.goods1 ul li .evaluate{
+.goods1 .content .rightUl li .evaluate{
 	padding-top: 4px;
 	width: 234px;
 	height: 84px;
 	position: absolute;
 	top: 300px;
 	color : #f5f5f5;
-/* 	background: #000; */
-/* 	display: none; */
 }
-.goods1 ul li:hover .evaluate{
+.goods1 .content .rightUl li:hover .evaluate{
 	transform: translateY(-84px);
 	transition:  0.5s ;
 	background-color: #ff6700;
-/* 	display: block; */
 }
-.goods1 ul li:hover .evaluate .one{
+.goods1 .content .rightUl li:hover .evaluate .one{
 	width: 174px;
 	height: 36px;
 	margin:10px 30px 5px;
 	font-size: 12px;
 	color: #fff;
 	text-align: left;
-/* 	background: #000;	 */
 }
-.goods1 ul li:hover .evaluate .two{
+.goods1 .content .rightUl li:hover .evaluate .two{
 	width: 174px;
 	height: 18px;
 	margin:0 30px;
 	font-size: 12px;
 	color:rgba(255,255,255,0.6);
 	text-align: left;
-/* 	background: #000; */	
 }
+
+
 .bottom{
 	width: 1226px;
 	height: 120px;
@@ -1087,7 +1139,7 @@
 .goods2 ul li img{
 	width: 140px;
 	height: 140px;
-	margin: 40px 0px 15px;
+	margin: 40px 0 15px;
 }
 .goods2 ul li .one{
 	color: #333;
@@ -1242,7 +1294,7 @@
 .goods4 ul li .con_one{
 	margin: 0 20px 0;
 	width: 256px;
-	height: 325px;
+	height: 280px;
 /* 	background-color: orange; */
 	float: left;
 	position: absolute;
@@ -1253,7 +1305,7 @@
 .goods4 ul li .con_two{
 	margin: 0 20px 0;
 	width: 256px;
-	height: 325px;
+	height: 280px;
 	/* 	background-color: orange; */
 	float: left;
 	position: absolute;
@@ -1264,7 +1316,7 @@
 .goods4 ul li .con_three{
 	margin: 0 20px 0;
 	width: 256px;
-	height: 325px;
+	height: 280px;
 	/* 	background-color: orange; */
 	float: left;
 	position: absolute;
@@ -1275,7 +1327,7 @@
 .goods4 ul li .con_fore{
 	margin: 0 20px 0;
 	width: 256px;
-	height: 325px;
+	height: 280px;
 	/* 	background-color: orange; */
 	float: left;
 	position: absolute;
@@ -1323,6 +1375,9 @@
 	border:1px solid #ffac13;
 	margin:0 auto;
 	color:#ffac13;
+	line-height: 28px;
+	font-size: 10px;
+	margin-bottom: 30px;
 }
 .goods4 ul li .content .con_one .fore:hover{
 	color: #fff;
@@ -1405,10 +1460,11 @@
 	width: 80px;
 	height: 20px;
 	position: absolute;
+	bottom: 10px;
 	left:0;
 	right:0;
+
 	margin:0 auto;
-	bottom:10px;
 }
 .goods4 ul li .pagers1{
 	width: 10px;
@@ -1594,6 +1650,8 @@
 	display: block;
 	text-align: center;
 }
+
+
 /* 这是footer */
 .footer{
 	width: 100%;
@@ -1708,7 +1766,8 @@
 	color: #fff;
 	background-color: #ff6700;
 	margin: 0 auto;
-}.footer .info{
+}
+.footer .info{
 	padding: 30px 0;
 	width: 100%;
 	height: 166px;
@@ -1780,14 +1839,14 @@
 .footer .info .bottom img{
 	width: 267px;
 	height: 19px;
-	margin:30px 480px 0px;
+	margin:30px 480px 0;
 /* 	background-color: orange; */
 }
 
 .mp4{
-	position: fixed;
-	left: 235px;
-	top: 15px;
-	background-color:rgba(255 255 255 0);
-	display: none;
-}
+	 position: fixed;
+	 left: 235px;
+	 top: 15px;
+	 background-color:rgba(255 255 255 0);
+	 display: none;
+ }
