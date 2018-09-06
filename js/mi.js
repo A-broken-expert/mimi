@@ -52,12 +52,6 @@
             flag = false;
             move();
         };
-        banner.onmouseenter = function () {
-            clearInterval(t);
-        };
-        banner.onmouseleave = function () {
-            t = setInterval(move, delay);
-        };
 //bannerBar
         for (let i = 0; i < dots.length; i++) {
 
@@ -101,7 +95,14 @@
         window.onfocus = function () {
             t = setInterval(move, delay);
         };
+        banner.onmouseenter = function () {
+            clearInterval(t);
+        };
+        banner.onmouseleave = function () {
+            t = setInterval(move, delay);
+        };
     }
+
     //内容轮播函数
     function goods4(cons, bannerBar, widthOne, rightBthOne, leftBthOne, activeClass,flag=true) {
         let next = 0;
@@ -199,7 +200,6 @@ window.onload=function() {
     let widthsTwo=parseInt(getComputedStyle(contentTwo,null).width)/3;
     let lis=document.querySelectorAll(".aside li");
     let aside=document.querySelectorAll(".aside .card");
-    console.log(lis,aside);
     let next=0;
         bthR[0].onclick=function(){
             next++;
@@ -239,12 +239,11 @@ window.onload=function() {
             value.onmouseleave=function(){
                 aside[index].style.display="none";
             }
-        })
+        });
 
 //    家电选项卡
     let rightUlOnes=document.querySelectorAll(".goods1 .content .rightUl .rightUlOne");
     let hots=document.querySelectorAll(".goods1 .top .right a");
-    console.log(rightUlOnes,hots);
 
     rightUlOnes[0].style.display="block";
     hots.forEach(function(value,index){
@@ -259,6 +258,46 @@ window.onload=function() {
             value.className="active";
             console.log(index);
         }
-    })
+    });
 
+// 头部选项卡
+//    选项卡外层盒子
+    let navCard=document.querySelector(".navCard");
+    //选项
+    let heads=document.querySelectorAll(".head .contain ul .nav");
+    // 选项卡内容
+    let navCardUls=document.querySelectorAll(".navCard .content .NavCardUl");
+    //选项卡外层盒子
+    let headBox=document.querySelector(".head .contain ul .idCard");
+
+    heads.forEach((value,index)=>{
+        value.onmouseenter=function(){
+            navCardUls.forEach((e)=>{
+                e.style.display="none"
+            });
+            navCard.classList.add("activeCard");
+            navCardUls[index].style.display="block";
+        };
+        headBox.onmouseleave=function(){
+            navCard.classList.remove("activeCard");
+        };
+    });
+//    浏览器置顶
+    let back=document.querySelector(".rightbar .sticky");
+    console.log(back);
+    window.onscroll=function(){
+        let sh=document.documentElement.scrollTop||document.body.scrollTop;
+        if(sh>700){
+            console.log(sh);
+            // back.style.opacity="1";
+            animate(back,{opacity:1},200);
+        }else{
+            // back.style.opacity="0";
+            animate(back,{opacity: 0},200);
+        }
+    };
+    back.onclick=function(){
+        animate(document.body,{scrollTop:0},600);
+        animate(document.documentElement,{scrollTop: 0},600);
+    }
 };
