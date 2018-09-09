@@ -683,8 +683,12 @@
 	border: 1px solid #e0e0e0;
 	float: left;
 	color: #e0e0e0;
+	cursor: pointer;
 }
-.top1 .right .rightbth:hover{
+.top1 .right .rightbth.active2:hover{
+	color: #ff6700;
+}
+.top1 .right .leftbth.active2:hover{
 	color: #ff6700;
 }
 .top1 .right .rightbth{
@@ -694,6 +698,13 @@
 	line-height: 21px;
 	border: 1px solid #e0e0e0;
 	float: left;
+	color: #e0e0e0;
+	cursor: pointer;
+}
+.top1 .right .leftbth.active2{
+	 color: #757575;
+ }
+.top1 .right .rightbth.active2{
 	color: #757575;
 }
 .box1{
@@ -794,14 +805,14 @@
 	margin: 0 auto;
 }
 .goods .top .right .dot{
-	width: 20px;
-	height: 20px;
+	width: 18px;
+	height: 18px;
 	border-radius: 50%;
 	background-color: #b0b0b0;
 	float: right;
-	margin: 18px 0 0  5px;
+	margin: 20px 0 0  5px;
 	text-align: center;
-	line-height: 18px;
+	line-height: 16px;
 	color: #fff;
 }
 .goods .top .right a:hover{
@@ -1160,7 +1171,7 @@
 }
 .goods2 .top .right{
 	float:right;
-	font-size: 16px;
+	font-size: 22px;
 	color: #424242;
 }
 .goods2 .top .right{
@@ -1179,6 +1190,7 @@
 	border: 1px solid #e0e0e0;
 	float: left;
 	color: #e0e0e0;
+	cursor: pointer;
 }
 .goods2 .top .right .rightbth{
 	width: 35px;
@@ -1187,10 +1199,20 @@
 	line-height: 20px;
 	border: 1px solid #e0e0e0;
 	float: left;
+	color: #e0e0e0;
+	cursor: pointer;
+}
+.goods2 .top .right .rightbth.active2:hover{
+	color: #ff6700;
+}
+.goods2 .top .right .leftbth.active2:hover{
+	color: #ff6700;
+}
+.goods2 .top .right .leftbth.active2{
 	color: #757575;
 }
-.goods2 .top .right .rightbth:hover{
-	color: #ff6700;
+.goods2 .top .right .rightbth.active2{
+	color: #757575;
 }
 .goods2 .top .right a:hover{
 	color: #ff6700;
@@ -1310,8 +1332,13 @@
 	text-align: left;
 	font-size: 14px;
 	width: 240px;
-	height: 72px;
+	height: 74px;
 	margin: 22px auto;
+	display:-webkit-box;
+	-webkit-line-clamp:4;
+	-webkit-box-orient:vertical;
+	overflow:hidden;
+	Text-overflow:ellipsis;
 }
 .goods3 ul li .one{
 	width: 230px;
@@ -1648,14 +1675,14 @@
 	margin: 0 auto;
 }
 .goods5 .top .right .dot{
-	width: 20px;
-	height: 20px;
+	width: 18px;
+	height: 18px;
 	border-radius: 50%;
 	background-color: #b0b0b0;
 	float: right;
-	margin-top: 18px;
+	margin-top: 20px;
 	text-align: center;
-	line-height: 18px;
+	line-height: 16px;
 	margin-left: 5px;
 	color: #fff;
 }
@@ -1941,7 +1968,12 @@
 	margin:30px 480px 0;
 /* 	background-color: orange; */
 }
-
+li{
+	cursor: pointer;
+}
+.li{
+	cursor: pointer;
+}
 .mp4{
 	 position: fixed;
 	 left: 235px;
